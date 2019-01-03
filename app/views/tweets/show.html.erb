@@ -1,0 +1,14 @@
+<%= render partial: "tweets/tweet", locals: { tweet: @tweet} %>
+<div class=row>
+  <div class="col s10 m5">
+    <div class="card white">
+      <div class="card-content black-text">
+        <ul>
+          <li>投稿日時：<%= @tweet.created_at %></li>
+          <li>更新日時：<%= @tweet.updated_at %></li>
+          <li>投稿者：<%= @tweet.user.nickname %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

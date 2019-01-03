@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card white">
+      <div class="card-content black-text">
+        <%= simple_format(tweet.text) %>
+      </div>
+      <div class="card-action">
+        <ul>
+          <li>
+            <%= link_to '詳細', "/tweets/#{tweet.id}" , method: :get %>
+          </li>
+          <% if user_signed_in? && current_user.id == tweet.user_id %>
+            <li>
+              <%= link_to '編集', "/tweets/#{tweet.id}/edit" , method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', "/tweets/#{tweet.id}" , method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="input-field col s5">
+        <%= form_with model: @tweet, url: tweet_path, method: :patch, local: true do |form| %>
+          <%= form.text_field :text %>
+          <%= form.submit "送信" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
